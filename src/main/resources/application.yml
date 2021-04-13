@@ -1,0 +1,12 @@
+application:
+  title: Digital Marketing Messenger
+  website: http://localhost:4200
+
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb
+
+logging:
+  level:
+    org.springframework:
+      data.r2dbc: DEBUG

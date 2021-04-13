@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  askalien-admin:
+    image: security-mktmsg-1.0.0-SNAPSHOT
+    ports:
+      - "8080:8080"
+    environment:
+     - DATABASE_URL=postgres://postgres:postgres@localhost:5432/mythidb
+     - APPLICATION_WEBSITE=http://localhost:4200
+     - AUTHENTICATOR_SERVER=https://cognito-idp.us-east-1.amazonaws.com/us-east-1_vXjuddh4O      
+   
