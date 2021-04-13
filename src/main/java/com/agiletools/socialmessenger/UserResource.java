@@ -2,11 +2,9 @@ package com.agiletools.socialmessenger;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @CrossOrigin(origins = "${application.website}", maxAge = 3600)
 @RestController
@@ -21,5 +19,9 @@ public class UserResource {
         return service.listUsers();
     }
 
+    @PostMapping(path = "/login")
+    public Mono<LoginResponse> login(@RequestBody LoginRequest request)  {
+        return service.login(request);
+    }
 
 }
